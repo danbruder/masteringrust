@@ -1,0 +1,6 @@
+[package]
+name = "trait_square"
+version = "0.1.0"
+authors = ["dan <ddbruder@gmail.com>"]
+
+[dependencies]
