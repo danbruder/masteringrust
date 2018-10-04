@@ -14,12 +14,12 @@ impl Display for Temp {
     }
 }
 
-struct Drink {
-    level: usize,
-    temperature: Temp
+struct Drink<T> {
+    level: T,
+    temperature: Temp,
 }
 
-impl Display for Drink {
+impl <T: Display> Display for Drink<T> {
     fn fmt(&self, f: &mut Formatter) -> Result {
         write!(f, "{} {}", self.level, self.temperature)
     }
@@ -27,12 +27,12 @@ impl Display for Drink {
 
 fn main() {
     let milk = Drink{
-        level: 10,
+        level: &"Cat",
         temperature: Temp::Cold,
     };
 
     let coffee = Drink{
-        level: 2,
+        level: 23.93,
         temperature: Temp::Hot,
     };
 
